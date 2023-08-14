@@ -63,7 +63,7 @@
       },
       rle(seed) {
         this.usingRLE = true
-        const url = 'http://192.168.0.103:5000/api_rle'
+        const url = 'https://192.168.0.103:5000/api_rle'
         fetch(url, {
           method: 'POST',
           headers: {
@@ -145,7 +145,7 @@
         else {
           world = this.data[this.roundTurn()-1]
         }
-        const url = 'http://192.168.0.103:5000/api_gol'
+        const url = 'https://192.168.0.103:5000/api_gol'
         fetch(url, {
           method: 'POST',
           headers: {
@@ -212,13 +212,11 @@
       pause() {
         this.isPlaying = 0
         this.pauseWaiting = 1
-        console.log('pause')
       },
       select(event) {
         if (!this.isToggling) {return}
         if (this.turn != 0) {return}
         const targetId = event.currentTarget.id
-        console.log(targetId)
         const e = document.getElementById(targetId)
         if (e.className == 'dead') {e.className = 'alive'}
         else {e.className = 'dead'}
@@ -244,7 +242,7 @@
         this.timeout = sliderValue
       })
       this.initialWorld = this.createEmptyWorld()
-      const url = 'http://192.168.0.103:5000/api_seed'
+      const url = "https://192.168.0.103:5000/api_seed"
       fetch(url, {
         method: 'GET',
       })
