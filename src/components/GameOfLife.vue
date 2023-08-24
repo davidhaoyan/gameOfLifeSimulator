@@ -32,6 +32,8 @@
   </template>
 
   <script>
+  import config from '../config.js'
+  const localServerUrl = config.localServerUrl
   export default {
     name: 'GameOfLife',
     data() {
@@ -63,7 +65,7 @@
       },
       rle(seed) {
         this.usingRLE = true
-        const url = 'https://192.168.0.103:5000/api_rle'
+        const url = localServerUrl + '/api_rle'
         fetch(url, {
           method: 'POST',
           headers: {
@@ -145,7 +147,7 @@
         else {
           world = this.data[this.roundTurn()-1]
         }
-        const url = 'https://192.168.0.103:5000/api_gol'
+        const url = localServerUrl + '/api_gol'
         fetch(url, {
           method: 'POST',
           headers: {
@@ -242,7 +244,7 @@
         this.timeout = sliderValue
       })
       this.initialWorld = this.createEmptyWorld()
-      const url = "https://192.168.0.103:5000/api_seed"
+      const url = localServerUrl + '/api_seed'
       fetch(url, {
         method: 'GET',
       })
