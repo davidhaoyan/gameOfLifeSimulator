@@ -128,6 +128,7 @@
         else return (y*10) + 10
       },
       async fetch() {
+        console.log("fetch")
         let world;
         if (this.turn == 0) {
           if (this.usingRLE) {
@@ -184,6 +185,7 @@
           });
       },
       play() {
+        console.log("play")
         if (this.turn == 0) {
           this.fetch()
         }
