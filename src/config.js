@@ -1,5 +1,5 @@
 const config = {
-    localServerUrl: 'https://3.27.174.72:8443'
+    localServerUrl: 'https://10.89.137.100:8443'
 }
 
 export default config
